@@ -1,0 +1,11 @@
+
+import os
+from os.path import join, getsize
+for path, dirs, files in os.walk('/'):
+    if len(dirs) > 0:
+        print path, str(getsize(path)), "bytes and contains the following "
+        for file_name in files:
+            print file_name, getsize(join(path, file_name)), " bytes"
+    for dir_name in dirs:
+        print dir_name, getsize(join(path, dir_name)), " bytes"
+        
